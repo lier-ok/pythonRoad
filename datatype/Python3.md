@@ -540,7 +540,7 @@ print(str(a))  # "True"
 
 
 
-#### 2.8: 列表list
+#### 2.8：列表list
 
 ```python
 list = [1,2,3,4]
@@ -918,3 +918,93 @@ range(-10,-100,-30) # -10,-40,-70
 ```
 
 ### 4：推导式
+
+#### 4.1：列表推导式
+
+```
+[表达式 for 变量 in 列表] 
+[out_exp_res for out_exp in input_list]
+
+或者 
+
+[表达式 for 变量 in 列表 if 条件]
+[out_exp_res for out_exp in input_list if condition]
+```
+
+- out_exp_res：列表生成元素表达式，可以是有返回值的函数。
+- for out_exp in input_list：迭代 input_list 将 out_exp 传入到 out_exp_res 表达式中。
+- if condition：条件语句，可以过滤列表中不符合条件的值。
+
+```python
+# 获取名字长度大于5的元素，并转为大写
+names = ["test", "Bob", "nilu", "diluke", "原神启动"]
+res = [name.upper() for name in names if len(name) > 5]
+print(res)
+```
+
+#### 4.2：字典推导式
+
+字典推导基本格式：
+
+```python
+{ key_expr: value_expr for value in collection }
+或
+{ key_expr: value_expr for value in collection if condition }
+```
+
+```python
+# 将列表中的元素长度大于等于4的元素 作为字典的key,元素长度作为value
+names = ["test", "Bob", "nilu", "diluke", "原神启动"]
+res = {key:len(key)for key in names if len(key) >= 4}
+print(res)
+```
+
+#### 4.3：集合推导式
+
+集合推导式基本格式：
+
+```
+{ expression for item in Sequence }
+或
+{ expression for item in Sequence if conditional }
+```
+
+```python
+# 将三个数的平方作为集合中的元素
+values = [10, 2, 3]
+res = {value ** 2 for value in values}
+print(res)
+```
+
+#### 4.4：元组推导式（生成器表达式）
+
+元组推导式可以利用 range 区间、元组、列表、字典和集合等数据类型，快速生成一个满足指定需求的元组。
+
+元组推导式基本格式：
+
+```
+(expression for item in Sequence )
+或
+(expression for item in Sequence if conditional )
+```
+
+```python
+# 生成一个包含数字 1~9 的元组
+res = (value for value in range(1,10))
+tup = tuple(res)
+print(tup)
+```
+
+
+
+```python
+# 将a开头的字符串首字母大写，b开头的字符串全大写
+
+values = ["abc", "bbc", "bbr", "acd"]
+res = [value.title() if value.startswith("a") else value.upper() for value in values]
+print(res)
+```
+
+
+
+5：迭代器与生成器

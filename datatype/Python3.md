@@ -872,3 +872,49 @@ y = str("2.8") "2.8"
 # dict(d) 将 (key, value)元组序列转为字典
 ```
 
+
+
+### 3: 流程控制
+
+#### 3.1条件控制
+
+```python
+if condition1:
+	代码块
+elif condition2:
+	代码块
+else:
+	代码块
+
+match...case 类似于java中的switch...case
+```
+
+#### 3.2 循环控制
+
+```python
+# while
+while condition:
+    代码块
+    
+# while...else...
+while condition:
+    代码块
+else:
+    代码块
+
+for variable in seq
+	代码块
+else
+    代码块
+    
+# range函数
+# 生成指定范围内的序列
+range(1,5) # 1,2,3,4
+range(0,10,3) # 0,3,6,9
+range(-10,-100,-30) # -10,-40,-70
+
+
+# break 与 continue 与java中类似
+```
+
+### 4：推导式
